@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+   <div class="container">
+    
+    <span id="hours">00</span>
+    <span>:</span>
+    <span id="minutes">00</span>
+    <span>:</span>
+    <span id="seconds">00</span>
+    <span id="session">AM</span>
+   </div>
+</body>
+<script>
+
+// function displayTime(){
+//     var dateTime = new Date();
+//     var hrs = dateTime.getHours();
+//     var min = dateTime.getMinutes();
+//     var sec = dateTime.getSeconds();
+//     var session = document.getElementById("session");
+
+// if(hrs >= 12){
+//     session.innerHTML="PM";
+// }else{
+//      session.innerHTML="AM";
+// }
+// if(hrs > 12){
+//     hrs = hrs - 12
+// }
+
+// document.getElementById("hours").innerHTML= hrs;
+// document.getElementById("minutes").innerHTML=min;
+// document.getElementById("seconds").innerHTML=sec;
+// } 
+
+
+// setInterval(displayTime, 10);
+
+  
+function displayTime(){
+    var dateTime= new Date();
+    var hrs= dateTime.getHours();
+    var min = dateTime.getMinutes();
+    var sec = dateTime.getSeconds();
+    var session= document.getElementById("session");
+
+
+    document.getElementById("hours").innerHTML=hrs;
+    document.getElementById("minutes").innerHTML=min;
+    document.getElementById("seconds").innerHTML=sec; 
+   
+
+   if(hrs >= 12){
+    session.innerHTML="PM";
+   }else{
+     session.innerHTML="AM";
+   }
+   if(hrs > 12){
+    hrs=hrs-12;
+   }
+  
+}
+setInterval(displayTime, 20);
+
+
+</script>
+
+</html>
